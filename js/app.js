@@ -6,9 +6,19 @@
 function extraerCampos(persona) {
     return {
         rut: persona.rut || persona.RUT || persona.Rut || '',
+        dv: persona.dv || persona.DV || persona.Dv || '',
         nombre: persona.nombre || persona.NOMBRE || persona.nombre_completo || persona['NOMBRE COMPLETO'] || '',
+        tipoNotificacion: persona['TIPO NOTIFICACIÓN'] || persona.tipo_notificacion || persona.tipoNotificacion || '',
+        montoReintegro: persona['MONTO DE REINTEGRO REAL'] || persona.monto || persona.MONTO || persona.monto_reintegro || '0',
+        ipc: persona.IPC || persona.ipc || '',
+        montoReajustado: persona['ANUAL 2024 REAJUSTADO'] || persona.monto_reajustado || '',
         region: persona.region || persona.REGIÓN || persona.Region || persona.REGION || '',
-        monto: persona.monto || persona.MONTO || persona.monto_reintegro || persona['MONTO DE REINTEGRO REAL'] || 0
+        comuna: persona.COMUNA || persona.comuna || '',
+        email: persona.EMAIL || persona.email || '',
+        telefono: persona.TELÉFONO || persona.telefono || '',
+        glosa: persona.GLOSA || persona.glosa || '',
+        fechaNacimiento: persona['FECHA DE NACIMIENTO'] || persona.fecha_nacimiento || '',
+        fibe: persona.FIBE || persona.fibe || ''
     };
 }
 
@@ -21,8 +31,13 @@ function limpiarDatos(data) {
         const registro = extraerCampos(persona);
         
         // Convertir monto a número, removiendo símbolos de moneda
-        if (typeof registro.monto === 'string') {
-            registro.monto = parseInt(registro.monto.replace(/[^\d]/g, '')) || 0;
+        if (typeof registro.montoReintegro === 'string') {
+            registro.montoReintegro = parseInt(registro.montoReintegro.replace(/[^\d]/g, '')) || 0;
+        }
+        
+        // Convertir monto reajustado
+        if (typeof registro.montoReajustado === 'string') {
+            registro.montoReajustado = parseInt(registro.montoReajustado.replace(/[^\d]/g, '')) || 0;
         }
         
         // Limpiar espacios en blanco
@@ -141,7 +156,7 @@ function mostrarDatos(data) {
     if (!data || data.length === 0) {
         tbody.innerHTML = `
             <tr>
-                <td colspan="4" style="text-align: center; padding: 20px;">No se encontraron resultados</td>
+                <td colspan="13" style="text-align: center; padding: 20px;">No se encontraron resultados</td>
             </tr>
         `;
         return;
@@ -153,7 +168,16 @@ function mostrarDatos(data) {
                 <td>${formatearRUT(persona.rut)}</td>
                 <td>${persona.nombre}</td>
                 <td>${persona.region}</td>
-                <td>$${persona.monto.toLocaleString('es-CL')}</td>
+                <td>${persona.comuna}</td>
+                <td>$${persona.montoReintegro.toLocaleString('es-CL')}</td>
+                <td>$${persona.montoReajustado.toLocaleString('es-CL')}</td>
+                <td>${persona.tipoNotificacion}</td>
+                <td>${persona.email}</td>
+                <td>${persona.telefono}</td>
+                <td>${persona.fechaNacimiento}</td>
+                <td title="${persona.glosa}" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${persona.glosa}</td>
+                <td>${persona.ipc}</td>
+                <td>${persona.fibe}</td>
             </tr>
         `;
 
