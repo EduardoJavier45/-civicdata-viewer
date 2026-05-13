@@ -28,10 +28,10 @@ CivicData Viewer/
 │   └── app.js                # Lógica de la aplicación
 │
 ├── /data
-│   └── sample-data.json      # Datos de prueba en formato JSON
+│   └── data.json             # Datos actualizados en formato JSON (37 registros)
 │
 └── /assets
-    └── (Imágenes y recursos futuros)
+    └── (Imágenes y recursos)
 ```
 
 ## ✨ Características Implementadas
@@ -88,12 +88,12 @@ npx http-server
 
 ## 📊 Datos Disponibles
 
-El archivo `data/sample-data.json` contiene:
-- **10 registros de prueba**
-- **Información de usuarios** (RUT, Nombre, Región, Monto)
-- **Regiones incluidas**: Metropolitana, Valparaíso, Los Lagos, Biobío, Antofagasta, Coquimbo, Maule, Los Ríos
+El archivo `data/data.json` contiene:
+- **37 registros actualizados** de beneficiarios reales
+- **Información completa** (RUT, Nombre, Región, Comuna, Monto, Email, Teléfono, Glosa, etc.)
+- **Múltiples regiones de Chile**: Metropolitana, Valparaíso, Antofagasta, Los Lagos, La Araucanía, Magallanes, Aysén, Biobío, Libertador General Bernardo O'Higgins
 
-**Nota**: Los datos son únicamente de demostración con propósito educativo.
+**Nota**: Los datos incluyen información de reintegros 2024 procesada según criterios específicos del sistema.
 
 ## 💻 Funciones JavaScript Principales
 
