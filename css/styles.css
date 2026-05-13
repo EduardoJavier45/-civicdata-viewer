@@ -1,0 +1,267 @@
+/* ========================================
+   RESET Y ESTILOS BASE
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de colores */
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #3498db;
+    --color-exito: #27ae60;
+    --color-fondo: #ecf0f1;
+    --color-texto: #2c3e50;
+    --color-borde: #bdc3c7;
+    --color-hover: #34495e;
+}
+
+/* Estilos globales del cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    font-size: 1.1em;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+.main-content {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+/* ========================================
+   SECCIÓN DE FILTROS
+   ======================================== */
+.filtros-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.seccion-titulo {
+    font-size: 1.5em;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-secundario);
+    padding-bottom: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 20px;
+}
+
+.filtro-etiqueta {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-primario);
+}
+
+/* Estilos para input de búsqueda */
+.input-busqueda {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.input-busqueda:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    background-color: #f8f9fa;
+}
+
+/* Estilos para select */
+.select-region {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-region:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.select-region:hover {
+    border-color: var(--color-secundario);
+}
+
+/* ========================================
+   TABLA DE DATOS
+   ======================================== */
+.tabla-seccion {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos para encabezado de tabla */
+.encabezado-tabla {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-hover) 100%);
+    color: white;
+}
+
+.tabla-datos th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+}
+
+/* Estilos para celdas de datos */
+.tabla-datos td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--color-borde);
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto hover en filas */
+.tabla-datos tbody tr:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.tabla-datos tbody tr:hover td {
+    color: var(--color-secundario);
+}
+
+/* Alternancia de colores en filas */
+.tabla-datos tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.tabla-datos tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 3px solid var(--color-secundario);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.8em;
+    }
+
+    .subtitulo {
+        font-size: 0.95em;
+    }
+
+    .filtros-panel,
+    .tabla-seccion {
+        padding: 20px;
+    }
+
+    .tabla-datos th,
+    .tabla-datos td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 25px 15px;
+    }
+
+    .titulo {
+        font-size: 1.4em;
+    }
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .filtros-panel,
+    .tabla-seccion {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .tabla-datos th,
+    .tabla-datos td {
+        padding: 6px 8px;
+        font-size: 0.85em;
+    }
+}

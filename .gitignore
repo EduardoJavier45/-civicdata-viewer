@@ -1,6 +1,10 @@
 # Datos sensibles
-/data/*.json
+/data/*.csv
 
-# Archivos del sistema
+# Archivos de pruebas seguros permitidos
+!data/sample-data.json
+
+# Sistema
 .DS_Store
 Thumbs.db
+``

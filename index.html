@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicData Viewer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header class="header">
+        <div class="container">
+            <h1 class="titulo">CivicData Viewer</h1>
+            <p class="subtitulo">Visualizador de Datos Cívicos</p>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="main-content">
+        <div class="container">
+            <!-- PANEL DE FILTROS -->
+            <section class="filtros-panel">
+                <h2 class="seccion-titulo">Filtros de Búsqueda</h2>
+                
+                <div class="filtro-grupo">
+                    <label for="search" class="filtro-etiqueta">Buscar por Nombre o RUT:</label>
+                    <input type="text" id="search" class="input-busqueda" placeholder="Ingrese nombre o RUT...">
+                </div>
+
+                <div class="filtro-grupo">
+                    <label for="filtro-region" class="filtro-etiqueta">Filtrar por Región:</label>
+                    <select id="filtro-region" class="select-region">
+                        <option value="">Todas las regiones</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- TABLA DE DATOS -->
+            <section class="tabla-seccion">
+                <h2 class="seccion-titulo">Resultados</h2>
+                
+                <div class="tabla-contenedor">
+                    <table id="data-table" class="tabla-datos">
+                        <thead>
+                            <tr class="encabezado-tabla">
+                                <th>RUT</th>
+                                <th>Nombre Completo</th>
+                                <th>Región</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cuerpo-tabla">
+                            <!-- Los datos se cargarán aquí con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CivicData Viewer - Sistema de Visualización de Datos Públicos</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
